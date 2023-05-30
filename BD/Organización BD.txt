@@ -1,0 +1,24 @@
+Cliente: 
+	-Nombre
+	-Apellidos
+	-DNI (PK)
+	-Email
+	-Telefono
+	-Password
+
+Cuenta: 
+	-Numero de cuenta (PK)
+	-DNI Cliente (FK)
+	-Saldo 
+	
+
+Transacciones: 
+	-ID_Transaccion (PK)
+	-Num_Cuenta (FK)
+	-Cantidad
+	-N Cuenta destino
+	-Fecha
+	-Descripción
+
+
+	
