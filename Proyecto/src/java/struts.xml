@@ -4,7 +4,34 @@
 
 <struts>
     <!-- Configuration for the default package. -->
+   
     <package name="default" extends="struts-default">
+        <action name="">
+            <result type="chain">
+                <param name="actionName">comprobarLogin</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+    </package>
+    <package name="login" extends="struts-default">
+        <action name="comprobarLogin" class="actions.comprobarLogin">
+            <result name="success">/login.jsp</result>
+            <result name="correcto">/accesoPersonal.jsp</result>
+            <result name="input">/login.jsp</result>
+        </action>
+        
+        <action name="nuevoRegistro" class="actions.nuevoRegistro">
+            <result name="success">/login.jsp</result>
+            
+        </action>
+        
+        
         
     </package>
+    
+    
+    
+    
+    
+    
 </struts>
