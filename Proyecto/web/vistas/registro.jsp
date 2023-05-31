@@ -11,7 +11,7 @@
         <s:form method="POST" action="nuevoRegistro">
             <s:textfield name="nombre" label="Nombre" />
             <s:textfield name="apellidos" label="Apellidos" />
-            <s:textfield name="dni" label="DNI" />
+            <s:textfield name="DNI" label="DNI" />
             <s:textfield name="email" label="Email" />
             <s:textfield name="telefono" label="Teléfono" />
             <s:password name="password" label="Contraseña" />

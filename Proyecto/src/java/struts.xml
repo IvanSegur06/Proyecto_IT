@@ -20,9 +20,8 @@
             <result name="input">/vistas/login.jsp</result>
         </action>
         
-        <action name="nuevoRegistro" class="actions.nuevoRegistro">
-            <result name="success">/vistas/login.jsp</result>
-            
+        <action name="nuevoRegistro" class="actions.actionCliente" method="crearCliente">
+            <result name="success">/vistas/login.jsp</result> 
         </action>
         
         

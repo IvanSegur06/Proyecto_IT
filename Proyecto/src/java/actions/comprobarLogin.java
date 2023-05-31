@@ -16,8 +16,8 @@ import servicios.ClientesDAO;
  */
 public class comprobarLogin extends ActionSupport {
     
-    private String DNI;
-    private String password; 
+    private String DNI = null;
+    private String password = null; 
     private static GenericType<Cliente> genericType = new GenericType<Cliente>() {};
     private static ClientesDAO clienteDAO = new ClientesDAO(); 
     

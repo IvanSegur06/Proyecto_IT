@@ -21,7 +21,7 @@
             <s:submit name="boton" value="Login"/>
         </s:form>
         
-        <s:form method="POST" action="registro.jsp">
+        <s:form method="POST" action="vistas/registro.jsp">
             <s:submit name="boton" value="Registrarse"/>         
         </s:form>
         
