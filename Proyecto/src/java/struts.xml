@@ -15,13 +15,13 @@
     </package>
     <package name="login" extends="struts-default">
         <action name="comprobarLogin" class="actions.comprobarLogin">
-            <result name="success">/login.jsp</result>
-            <result name="correcto">/accesoPersonal.jsp</result>
-            <result name="input">/login.jsp</result>
+            <result name="error">/vistas/login.jsp</result>
+            <result name="success">/vistas/accesoPersonal.jsp</result>
+            <result name="input">/vistas/login.jsp</result>
         </action>
         
         <action name="nuevoRegistro" class="actions.nuevoRegistro">
-            <result name="success">/login.jsp</result>
+            <result name="success">/vistas/login.jsp</result>
             
         </action>
         

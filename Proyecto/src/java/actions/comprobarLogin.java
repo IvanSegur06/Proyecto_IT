@@ -6,6 +6,9 @@
 package actions;
 
 import com.opensymphony.xwork2.ActionSupport;
+import javax.ws.rs.core.GenericType;
+import modelo.Cliente;
+import servicios.ClientesDAO;
 
 /**
  *
@@ -15,6 +18,8 @@ public class comprobarLogin extends ActionSupport {
     
     private String DNI;
     private String password; 
+    private static GenericType<Cliente> genericType = new GenericType<Cliente>() {};
+    private static ClientesDAO clienteDAO = new ClientesDAO(); 
     
     public comprobarLogin() {
     }
@@ -34,19 +39,19 @@ public class comprobarLogin extends ActionSupport {
     public void setPassword(String password) {
         this.password = password;
     }
-
-   
-    
-    
+  
     
     public String execute() throws Exception {
         
-        if(getDNI().equals("PRUEBA")){
-            return "correcto"; 
-        }
-        else{
+        Cliente cliente = (Cliente) clienteDAO.find_XML(genericType, this.getDNI()); 
+        
+        if(cliente  != null && password.equals(cliente.getPassword())){
             return SUCCESS; 
+        }else{
+            return ERROR; 
         }
+        
+        
         
     }
     
