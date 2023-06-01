@@ -41,7 +41,7 @@ public class Cuenta implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "Num Cuenta")
+    @Column(name = "Num_Cuenta")
     private String numCuenta;
     @Basic(optional = false)
     @NotNull

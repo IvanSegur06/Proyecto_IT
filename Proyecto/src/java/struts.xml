@@ -13,24 +13,32 @@
             </result>
         </action>
     </package>
+    
+    
     <package name="login" extends="struts-default">
         <action name="comprobarLogin" class="actions.comprobarLogin">
+            <result name="error">/vistas/login.jsp</result>
+            <result name="success" type="chain">
+                <param name="actionName">mostrarCuenta</param>
+            </result>
+            <result name="input">/vistas/login.jsp</result>
+        </action>
+    </package>
+    
+    <package name="accionesCliente" extends="struts-default">
+        <action name="nuevoRegistro" class="actions.actionCliente" method="crearCliente">
+            <result name="success">/vistas/login.jsp</result> 
+        </action>   
+    </package>
+    
+    
+    <package name="accionesCuenta" extends="struts-default">
+        <action name="mostrarCuenta" class="actions.actionCuenta">
             <result name="error">/vistas/login.jsp</result>
             <result name="success">/vistas/accesoPersonal.jsp</result>
             <result name="input">/vistas/login.jsp</result>
         </action>
-        
-        <action name="nuevoRegistro" class="actions.actionCliente" method="crearCliente">
-            <result name="success">/vistas/login.jsp</result> 
-        </action>
-        
-        
-        
     </package>
     
-    
-    
-    
-    
-    
+ 
 </struts>

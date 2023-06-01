@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,15 +17,16 @@
     <body>
        
         <s:form method="POST" action="comprobarLogin">
-            <s:textfield name="DNI" label="DNI" value=""/>
-            <s:textfield name="password" label="Contraseña" value=""/>
+            <s:textfield name="DNI" label="DNI" value="49166815L"/>
+            <s:textfield name="password" label="Contraseña" value="1234"/>
             
             <s:submit name="boton" value="Login"/>
         </s:form>
         
         <s:form method="POST" action="vistas/registro.jsp">
-            <s:submit name="boton" value="Registrarse"/>         
+            <s:submit name="boton" value="Registrarse"/>      
         </s:form>
+        
         
         
     </body>

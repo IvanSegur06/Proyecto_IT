@@ -6,8 +6,10 @@
 package actions;
 
 import com.opensymphony.xwork2.ActionSupport;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.GenericType;
 import modelo.Cliente;
+import org.apache.struts2.ServletActionContext;
 import servicios.ClientesDAO;
 
 /**
@@ -46,6 +48,11 @@ public class comprobarLogin extends ActionSupport {
         Cliente cliente = (Cliente) clienteDAO.find_XML(genericType, this.getDNI()); 
         
         if(cliente  != null && password.equals(cliente.getPassword())){
+            HttpServletRequest request = ServletActionContext.getRequest();
+            request.getSession().setAttribute("nombre", cliente.getNombre() + cliente.getApellidos());
+            request.getSession().setAttribute("cliente", cliente);
+            
+            
             return SUCCESS; 
         }else{
             return ERROR; 

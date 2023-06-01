@@ -5,6 +5,7 @@
  */
 package servicios;
 
+import java.util.List;
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.WebTarget;
@@ -97,5 +98,5 @@ public class CuentasDAO {
     public void close() {
         client.close();
     }
-    
+
 }
