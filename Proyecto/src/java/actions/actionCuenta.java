@@ -57,7 +57,7 @@ public class actionCuenta extends ActionSupport {
         request.getSession().setAttribute("nCuentas", listaCuentas.size());
         request.getSession().setAttribute("saldo", saldo);
         request.getSession().setAttribute("listaCuentas", listaCuentas);
-        System.out.println(listaCuentas.toString());
+        
         
         return SUCCESS; 
     }

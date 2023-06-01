@@ -64,9 +64,9 @@ public class Transacciones implements Serializable {
     @NotNull
     @Lob
     @Size(min = 1, max = 65535)
-    @Column(name = "Descripci\u00f3n")
-    private String descripción;
-    @JoinColumn(name = "Num_Cuenta", referencedColumnName = "Num Cuenta")
+    @Column(name = "Descripcion")
+    private String descripcion;
+    @JoinColumn(name = "Num_Cuenta", referencedColumnName = "Num_Cuenta")
     @ManyToOne(optional = false)
     private Cuenta numCuenta;
 
@@ -77,12 +77,12 @@ public class Transacciones implements Serializable {
         this.iDTransaccion = iDTransaccion;
     }
 
-    public Transacciones(Integer iDTransaccion, long cantidad, String numcuentadestino, Date fecha, String descripción) {
+    public Transacciones(Integer iDTransaccion, long cantidad, String numcuentadestino, Date fecha, String descripcion) {
         this.iDTransaccion = iDTransaccion;
         this.cantidad = cantidad;
         this.numcuentadestino = numcuentadestino;
         this.fecha = fecha;
-        this.descripción = descripción;
+        this.descripcion = descripcion;
     }
 
     public Integer getIDTransaccion() {
@@ -118,11 +118,11 @@ public class Transacciones implements Serializable {
     }
 
     public String getDescripción() {
-        return descripción;
+        return descripcion;
     }
 
-    public void setDescripción(String descripción) {
-        this.descripción = descripción;
+    public void setDescripción(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Cuenta getNumCuenta() {

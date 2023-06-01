@@ -40,5 +40,16 @@
         </action>
     </package>
     
+    
+  
+    <package name="accionesTransaccion" extends="struts-default">
+        <action name="mostrarTransacciones" class="actions.actionTransacciones">
+            <result name="success">/vistas/mostrarTransacciones.jsp</result>
+            <result name="input">/vistas/login.jsp</result>
+        </action>
+    </package>
+    
+
+    
  
 </struts>

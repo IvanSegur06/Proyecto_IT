@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,39 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Transacciones Cuenta <s:property value="%{#session.numCuenta}"/></h1>
+
+        <s:iterator value="#session.listaTransicciones" var="transacciones">
+            <table>
+                <tr>
+                    <th>ID Transaccion:</th>
+                    <td><s:property value="#transacciones.iDTransaccion"/></td>
+                </tr>
+                
+                <tr>              
+                    <th>Num Cuenta Destino:</th>
+                    <td><s:property value="#transacciones.numcuentadestino"/></td>
+                </tr>
+                
+                <tr>              
+                    <th>Cantidad:</th>
+                    <td><s:property value="#transacciones.cantidad"/></td>
+                </tr>
+                
+                <tr>              
+                    <th>Fecha:</th>
+                    <td><s:property value="#transacciones.fecha"/></td>
+                </tr>
+                
+                <tr>              
+                    <th>Descripcion:</th>
+                    <td><s:property value="#transacciones.descripcion"/></td>
+                </tr>
+
+                <hr>
+            </table>
+        </s:iterator>
+
+
     </body>
 </html>

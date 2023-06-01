@@ -32,12 +32,17 @@
                     <th>Saldo</th>
                     <td><s:property value="#cuenta.saldo"/></td>
                 </tr>
+                <s:form method="POST" action="mostrarTransacciones">
+                    <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
+                    <s:submit name="boton" value="Mostrar Transacciones"/>      
+                </s:form>
                 <hr>
-            </s:iterator>
+            </table>
+        </s:iterator>
 
 
 
-        </table>
+
 
 
 
