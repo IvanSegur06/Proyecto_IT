@@ -38,8 +38,8 @@
                 </tr>
                 
                 <tr>              
-                    <th>Descripcion:</th>
-                    <td><s:property value="#transacciones.descripcion"/></td>
+                    <th>Descripción:</th>
+                    <td><s:property value="#transacciones.descripción"/></td>
                 </tr>
 
                 <hr>
