@@ -15,10 +15,10 @@
     <body>
         <h1>TRANSFERENCIA DESDE CUENTA <s:property value="%{#session.numCuenta}"/></h1>
         
-        <s:form method="POST" action="">
-            <s:textfield name="nombre" label="Nº Cuenta destino" />
-            <s:textfield name="apellidos" label="Cantidad" />
-            <s:textfield name="DNI" label="Descripción" />
+        <s:form method="POST" action="crearTransaccion">
+            <s:textfield name="CuentaDest" label="Nº Cuenta destino" value="345345" />
+            <s:textfield name="cantidad" label="Cantidad" value="234234234" />
+            <s:textfield name="descripcion" label="Descripción" value="Prueba" />
             
             <s:submit value="Realizar transferencia" />
         </s:form>

@@ -56,6 +56,12 @@
             <result name="success">/vistas/transferencia.jsp</result>
             <result name="input">/vistas/login.jsp</result>
         </action>
+        
+        <action name="crearTransaccion" class="actions.actionTransacciones" method="crearTransaccion">
+            <result name="success">/vistas/accesoPersonal.jsp</result>
+            <result name="input">/vistas/login.jsp</result>
+        </action>
+        
     </package>
     
 
