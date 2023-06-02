@@ -46,8 +46,15 @@
         <action name="crearCuenta" class="actions.actionCuenta" method = "crearCuenta">
             <result name="success" type="chain">
                 <param name="actionName">mostrarCuenta</param>
-            </result>
-            
+            </result>    
+            <result name="input">/vistas/login.jsp</result>      
+        </action>
+        
+        <action name="eliminacionCuenta" class="actions.actionCuenta" method = "eliminarCuenta">
+            <result name="success" type="chain">
+                <param name="actionName">mostrarCuenta</param>
+            </result>    
+            <result name="input">/vistas/login.jsp</result>  
         </action>
         
     </package>

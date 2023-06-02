@@ -21,74 +21,91 @@ import servicios.CuentasDAO;
  * @author Iván
  */
 public class actionCuenta extends ActionSupport {
-    
-    
-    private static GenericType<List<Cuenta>> genericType = new GenericType<List<Cuenta>>() {};
-    private static CuentasDAO cuentaDAO = new CuentasDAO(); 
-    private Cuenta cuenta = new Cuenta(); 
-    private List<Cuenta> listaCuentas = new ArrayList<>(); 
-    private List<Cuenta> list = new ArrayList<>(); 
-    
+
+    private static GenericType<List<Cuenta>> genericType = new GenericType<List<Cuenta>>() {
+    };
+    private static CuentasDAO cuentaDAO = new CuentasDAO();
+    private Cuenta cuenta = new Cuenta();
+    private List<Cuenta> listaCuentas = new ArrayList<>();
+    private List<Cuenta> list = new ArrayList<>();
+    String numCuenta; 
+
     public actionCuenta() {
     }
+
+    public String getNumCuenta() {
+        return numCuenta;
+    }
+
+    public void setNumCuenta(String numCuenta) {
+        this.numCuenta = numCuenta;
+    }
+
     
     
-    
-    
+
     public String execute() throws Exception {
-        Cliente cliente = new Cliente(); 
+        Cliente cliente = new Cliente();
         HttpServletRequest request = ServletActionContext.getRequest();
-        cliente = (Cliente) request.getSession().getAttribute("cliente"); 
-        double saldo = 0; 
-        
-        
-        list = cuentaDAO.findAll_XML(genericType); 
-        
-        for (int i = 0; i < list.size(); i++ ){
-            
-            if(list.get(i).getDNICliente().getDni().equals(cliente.getDni())){
-                
-                listaCuentas.add(list.get(i)); 
-                saldo += list.get(i).getSaldo(); 
-                
+        cliente = (Cliente) request.getSession().getAttribute("cliente");
+        double saldo = 0;
+
+        list = cuentaDAO.findAll_XML(genericType);
+
+        for (int i = 0; i < list.size(); i++) {
+
+            if (list.get(i).getDNICliente().getDni().equals(cliente.getDni())) {
+
+                listaCuentas.add(list.get(i));
+                saldo += list.get(i).getSaldo();
+
             }
-            
+
         }
-        
+
         request.getSession().setAttribute("nCuentas", listaCuentas.size());
         request.getSession().setAttribute("saldo", saldo);
         request.getSession().setAttribute("listaCuentas", listaCuentas);
-        
-        
-        return SUCCESS; 
+
+        return SUCCESS;
     }
-    
-    
-    public String crearCuenta(){
-        
-        Cliente cliente = new Cliente(); 
+
+    public String crearCuenta() {
+
+        Cliente cliente = new Cliente();
         HttpServletRequest request = ServletActionContext.getRequest();
-        cliente = (Cliente) request.getSession().getAttribute("cliente"); 
-        
-        Cuenta cuenta = new Cuenta(); 
-        
+        cliente = (Cliente) request.getSession().getAttribute("cliente");
+
+        Cuenta cuenta = new Cuenta();
+
         cuenta.setDNICliente(cliente);
-        
-       Random random = new Random();
+
+        Random random = new Random();
 
         int numeroAleatorio = random.nextInt(1000000);
 
         String cadenaAleatoria = String.valueOf(numeroAleatorio);
-        
+
         cuenta.setNumCuenta(cadenaAleatoria);
-        
+
         cuenta.setSaldo(0);
-        
-        CuentasDAO cuentaDao = new CuentasDAO(); 
-        
+
+        CuentasDAO cuentaDao = new CuentasDAO();
+
         cuentaDao.create_XML(cuenta);
-        
-        return SUCCESS; 
+
+        return SUCCESS;
     }
-    
+
+    public String eliminarCuenta() {
+
+        CuentasDAO cuentaDao = new CuentasDAO();
+
+        System.out.println("NUM CUENTA DELETE: " + numCuenta);
+
+        cuentaDao.remove(numCuenta);
+
+        return SUCCESS;
+    }
+
 }

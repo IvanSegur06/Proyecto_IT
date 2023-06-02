@@ -14,16 +14,16 @@
     </head>
     <body>
         <h1>Ajuste de su acceso personalizado <s:property value="%{#session.nombre}"/></h1>
-        
+
         <s:form method="POST" action="crearCuenta">
             <s:submit name="boton" value="Abrir cuenta"/>      
         </s:form>
-        
+
         <s:form method="POST" action="">
             <s:submit name="boton" value="Cerrar cuenta"/>      
         </s:form>
-        
-        
+
+
         <s:iterator value="#session.listaCuentas" var="cuenta">
             <table>
                 <tr>
@@ -35,9 +35,13 @@
                     <th>Saldo</th>
                     <td><s:property value="#cuenta.saldo"/></td>
                 </tr>
+                <s:form method="POST" action="eliminacionCuenta">
+                    <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
+                    <s:submit name="boton" value="Eliminar Cuenta"/>      
+                </s:form>
                 <hr>
             </table>
         </s:iterator>
-        
+
     </body>
 </html>
