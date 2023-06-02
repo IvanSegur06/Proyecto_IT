@@ -53,7 +53,6 @@ public class actionTransacciones extends ActionSupport {
             
             if(list.get(i).getNumCuenta().getNumCuenta().equals(numCuenta)){
                 
-                System.out.println("Descripcionnnnn: "+list.get(i).getDescripción());
                 
                 listaTransacciones.add(list.get(i)); 
                 

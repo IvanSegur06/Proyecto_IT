@@ -23,6 +23,10 @@
             </result>
             <result name="input">/vistas/login.jsp</result>
         </action>
+        <action name="cerrarSesion" class="actions.comprobarLogin" method="cerrarSession">
+            <result name="success">/vistas/login.jsp</result> 
+        </action>  
+        
     </package>
     
     <package name="accionesCliente" extends="struts-default">

@@ -14,6 +14,10 @@
     </head>
     <body>
         <h1>Bienvenid@ <s:property value="%{#session.nombre}"/></h1>
+        
+        <s:form method="POST" action="">
+                    <s:submit name="boton" value="Cerrar Sesion"/>      
+                </s:form>
 
         Nº Cuentas: <s:property value="%{#session.nCuentas}"/>
         <hr>

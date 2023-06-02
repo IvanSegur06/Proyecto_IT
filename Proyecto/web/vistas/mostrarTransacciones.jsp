@@ -14,6 +14,10 @@
     </head>
     <body>
         <h1>Transacciones Cuenta <s:property value="%{#session.numCuenta}"/></h1>
+        
+        <s:form action="accesoPersonal.jsp">
+            <s:submit value="Volver"/>
+        </s:form>  
 
         <s:iterator value="#session.listaTransicciones" var="transacciones">
             <table>

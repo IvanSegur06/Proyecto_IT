@@ -62,4 +62,12 @@ public class comprobarLogin extends ActionSupport {
         
     }
     
+    public String cerrarSession(){
+        
+        HttpServletRequest request = ServletActionContext.getRequest();
+        request.getSession().invalidate();
+          
+        return SUCCESS; 
+    }
+    
 }
