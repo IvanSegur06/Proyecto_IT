@@ -15,8 +15,12 @@
     <body>
         <h1>Bienvenid@ <s:property value="%{#session.nombre}"/></h1>
 
-        <s:form method="POST" action="">
+        <s:form method="POST" action="cerrarSesion">
             <s:submit name="boton" value="Cerrar Sesion"/>      
+        </s:form>
+        
+        <s:form method="POST" action="/vistas/ajusteCuentas.jsp">
+            <s:submit name="boton" value="Ajuste Cuentas"/>      
         </s:form>
 
 

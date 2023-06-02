@@ -42,6 +42,14 @@
             <result name="success">/vistas/accesoPersonal.jsp</result>
             <result name="input">/vistas/login.jsp</result>
         </action>
+        
+        <action name="crearCuenta" class="actions.actionCuenta" method = "crearCuenta">
+            <result name="success" type="chain">
+                <param name="actionName">mostrarCuenta</param>
+            </result>
+            
+        </action>
+        
     </package>
     
     

@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Registro de Usuario</h1>
+              
         <s:form method="POST" action="nuevoRegistro">
             <s:textfield name="nombre" label="Nombre" />
             <s:textfield name="apellidos" label="Apellidos" />

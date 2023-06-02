@@ -66,6 +66,8 @@ public class comprobarLogin extends ActionSupport {
         
         HttpServletRequest request = ServletActionContext.getRequest();
         request.getSession().invalidate();
+        
+   
           
         return SUCCESS; 
     }
