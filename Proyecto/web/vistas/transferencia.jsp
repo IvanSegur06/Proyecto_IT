@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>TRANSFERENCIA DESDE CUENTA <s:property value="%{#session.numCuenta}"/></h1>
+        
+        <s:form method="POST" action="">
+            <s:textfield name="nombre" label="Nº Cuenta destino" />
+            <s:textfield name="apellidos" label="Cantidad" />
+            <s:textfield name="DNI" label="Descripción" />
+            
+            <s:submit value="Realizar transferencia" />
+        </s:form>
+        
     </body>
 </html>

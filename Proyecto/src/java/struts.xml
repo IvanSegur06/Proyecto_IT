@@ -51,6 +51,11 @@
             <result name="success">/vistas/mostrarTransacciones.jsp</result>
             <result name="input">/vistas/login.jsp</result>
         </action>
+        
+        <action name="guardarNumCuenta" class="actions.actionTransacciones" method="guardarNumCuenta">
+            <result name="success">/vistas/transferencia.jsp</result>
+            <result name="input">/vistas/login.jsp</result>
+        </action>
     </package>
     
 

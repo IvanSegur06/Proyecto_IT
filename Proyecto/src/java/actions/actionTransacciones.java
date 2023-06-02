@@ -68,4 +68,12 @@ public class actionTransacciones extends ActionSupport {
         return SUCCESS; 
     }
     
+    public String guardarNumCuenta(){
+        
+        HttpServletRequest request = ServletActionContext.getRequest();
+        request.getSession().setAttribute("numCuenta", numCuenta);
+        
+        return SUCCESS; 
+    }
+    
 }

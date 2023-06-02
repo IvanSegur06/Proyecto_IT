@@ -14,10 +14,11 @@
     </head>
     <body>
         <h1>Bienvenid@ <s:property value="%{#session.nombre}"/></h1>
-        
+
         <s:form method="POST" action="">
-                    <s:submit name="boton" value="Cerrar Sesion"/>      
-                </s:form>
+            <s:submit name="boton" value="Cerrar Sesion"/>      
+        </s:form>
+
 
         Nº Cuentas: <s:property value="%{#session.nCuentas}"/>
         <hr>
@@ -36,6 +37,11 @@
                     <th>Saldo</th>
                     <td><s:property value="#cuenta.saldo"/></td>
                 </tr>
+                <s:form action="guardarNumCuenta">
+                    <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
+                    <s:submit value="Realizar Transferencia"/>
+                </s:form> 
+                
                 <s:form method="POST" action="mostrarTransacciones">
                     <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
                     <s:submit name="boton" value="Mostrar Transacciones"/>      
@@ -43,12 +49,6 @@
                 <hr>
             </table>
         </s:iterator>
-
-
-
-
-
-
 
 
 
