@@ -110,12 +110,24 @@ public class actionTransacciones extends ActionSupport {
         CuentasDAO dao = new CuentasDAO();
 
         cuenta = dao.find_XML(genericType, numCuenta);
+        
+        long saldo = cuenta.getSaldo(); 
 
         Transacciones t = new Transacciones();
 
         t.setNumcuentadestino(CuentaDest);
 
         int cantidadInt = Integer.parseInt(cantidad);
+        
+        
+        int nuevoSaldo = (int) saldo - cantidadInt; 
+        
+        
+       cuenta.setSaldo(nuevoSaldo);
+       
+       CuentasDAO cuentaDAO = new CuentasDAO();
+       
+       cuentaDAO.edit_XML(cuenta, cuenta.getNumCuenta());
 
         t.setCantidad(cantidadInt);
         t.setDescripción(descripcion);
@@ -131,10 +143,38 @@ public class actionTransacciones extends ActionSupport {
         TransaccionesDAO tranDAO = new TransaccionesDAO();
 
         t.setIDTransaccion(0);
+        
+        comprobarNumCuenta(CuentaDest,cantidadInt); 
 
         tranDAO.create_XML(t);
 
         return SUCCESS;
+    }
+    
+    public void comprobarNumCuenta(String numCuenta, int cantidadInt){
+        
+        int saldo; 
+        
+        GenericType <Cuenta> genericTypes = new GenericType <Cuenta>() {};
+        
+        CuentasDAO cuentaDAO = new CuentasDAO(); 
+        
+        Cuenta cuenta = new Cuenta(); 
+        
+        cuenta = cuentaDAO.find_XML(genericTypes, numCuenta); 
+        
+        if(cuenta != null){
+            
+            saldo = (int) cuenta.getSaldo(); 
+            
+            saldo += cantidadInt; 
+            
+            cuenta.setSaldo(saldo);
+            
+            cuentaDAO.edit_XML(cuenta, numCuenta);
+            
+        }
+        
     }
 
 }

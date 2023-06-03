@@ -34,7 +34,7 @@
                 
                 <tr>              
                     <th>Cantidad:</th>
-                    <td><s:property value="#transacciones.cantidad"/></td>
+                    <td><s:property value="#transacciones.cantidad"/> €</td>
                 </tr>
                 
                 <tr>              
