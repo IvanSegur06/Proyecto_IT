@@ -98,12 +98,21 @@ public class actionCuenta extends ActionSupport {
     }
 
     public String eliminarCuenta() {
+        
+       GenericType<Cuenta> genericTypes = new GenericType<Cuenta>() {
+    };
 
         CuentasDAO cuentaDao = new CuentasDAO();
 
-        System.out.println("NUM CUENTA DELETE: " + numCuenta);
+        Cuenta cuenta = new Cuenta(); 
+        
+        cuenta = cuentaDAO.find_XML(genericTypes, numCuenta); 
+        
+        if(cuenta.getSaldo() == 0){
+            cuentaDao.remove(numCuenta);
+        }
 
-        cuentaDao.remove(numCuenta);
+        
 
         return SUCCESS;
     }
