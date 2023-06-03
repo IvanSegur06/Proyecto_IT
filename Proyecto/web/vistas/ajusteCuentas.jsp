@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/ajusteCuentas.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,9 +20,7 @@
             <s:submit name="boton" value="Abrir cuenta"/>      
         </s:form>
 
-        <s:form method="POST" action="">
-            <s:submit name="boton" value="Cerrar cuenta"/>      
-        </s:form>
+     
 
 
         <s:iterator value="#session.listaCuentas" var="cuenta">

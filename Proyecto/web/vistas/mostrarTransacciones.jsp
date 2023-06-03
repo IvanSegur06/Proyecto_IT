@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/mostrarTransacciones.css">
 <!DOCTYPE html>
 <html>
     <head>

@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/accesoPersonal.css">
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,13 +41,13 @@
 
                 <tr>              
                     <th>Saldo</th>
-                    <td><s:property value="#cuenta.saldo"/></td>
+                    <td><s:property value="#cuenta.saldo"/>€</td>
                 </tr>
                 <s:form action="guardarNumCuenta">
                     <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
                     <s:submit value="Realizar Transferencia"/>
                 </s:form> 
-                
+
                 <s:form method="POST" action="mostrarTransacciones">
                     <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
                     <s:submit name="boton" value="Mostrar Transacciones"/>      

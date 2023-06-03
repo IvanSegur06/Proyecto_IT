@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
-<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css">
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +22,8 @@
             
             <s:submit name="boton" value="Login"/>
         </s:form>
+        
+        
         
         <s:form method="POST" action="/vistas/registro.jsp">
             <s:submit name="boton" value="Registrarse"/>      
