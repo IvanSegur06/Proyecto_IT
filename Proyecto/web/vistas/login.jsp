@@ -15,7 +15,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-       
+        
+        <h1>Acceso Banco Online</h1>
         <s:form method="POST" action="comprobarLogin">
             <s:textfield name="DNI" label="DNI" value="49166815L"/>
             <s:textfield name="password" label="Contraseña" value="1234"/>

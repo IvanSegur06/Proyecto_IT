@@ -17,18 +17,19 @@
     <body>
         <h1>Bienvenid@ <s:property value="%{#session.nombre}"/></h1>
 
-        <s:form method="POST" action="cerrarSesion">
-            <s:submit name="boton" value="Cerrar Sesion"/>      
-        </s:form>
-        
-        <s:form method="POST" action="/vistas/ajusteCuentas.jsp">
-            <s:submit name="boton" value="Ajuste Cuentas"/>      
-        </s:form>
+        <div style="display: flex; justify-content: space-between;">
+            <s:form method="POST" action="/vistas/ajusteCuentas.jsp">
+                <s:submit name="boton" value="Ajuste Cuentas"/>      
+            </s:form>
+            <s:form method="POST" action="cerrarSesion">
+                <s:submit name="boton" value="Cerrar Sesion"/>      
+            </s:form>
+        </div>  
 
 
         Nº Cuentas: <s:property value="%{#session.nCuentas}"/>
         <hr>
-        Saldo Total: <s:property value="%{#session.saldo}"/>
+        Saldo Total: <s:property value="%{#session.saldo}"/>€
 
         <h2>Lista de cuentas:</h2>
 
@@ -43,17 +44,19 @@
                     <th>Saldo</th>
                     <td><s:property value="#cuenta.saldo"/>€</td>
                 </tr>
-                <s:form action="guardarNumCuenta">
-                    <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
-                    <s:submit value="Realizar Transferencia"/>
-                </s:form> 
+                
+                    <s:form action="guardarNumCuenta" cssClass="form-inline">
+                        <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
+                        <s:submit value="Realizar Transferencia"/>
+                    </s:form> 
 
-                <s:form method="POST" action="mostrarTransacciones">
-                    <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
-                    <s:submit name="boton" value="Mostrar Transacciones"/>      
-                </s:form>
+                    <s:form method="POST" action="mostrarTransacciones" cssClass="form-inline">
+                        <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
+                        <s:submit name="boton" value="Mostrar Transacciones"/>      
+                    </s:form>
                 
-                
+
+
                 <hr>
             </table>
         </s:iterator>

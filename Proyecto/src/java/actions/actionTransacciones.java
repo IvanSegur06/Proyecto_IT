@@ -196,25 +196,26 @@ public class actionTransacciones extends ActionSupport {
         
         listTransacciones = (List<Transacciones>) request.getSession().getAttribute("listaTransicciones");
 
-        // Crear el documento PDF
+        
         Document document = new Document();
 
         try {
-            // Crear el escritor PDF
+            
             PdfWriter.getInstance(document, new FileOutputStream("C:/Users/Iván/Documents/GitHub/Proyecto_IT/Proyecto/PDFs/MovimientosCuenta" +numCuenta + ".pdf"));
+            //PdfWriter.getInstance(document, new FileOutputStream("../../../PDFs/archivo.pdf"));
 
 
-            // Abrir el documento
+            
             document.open();
 
-            // Iterar sobre la lista de transacciones y agregar cada una al documento
+            
             for (Transacciones transaccion : listTransacciones) {
-                String contenidoTransaccion = transaccion.toString(); // Asume que la clase Transacciones tiene un método toString() adecuado
+                String contenidoTransaccion = transaccion.toString(); 
                 
                 document.add(new Paragraph(contenidoTransaccion));
             }
 
-            // Cerrar el documento
+            
             document.close();
             System.out.println(System.getProperty("user.dir")); 
             System.out.println("PDF generado correctamente...");

@@ -16,7 +16,7 @@ form {
 table {
   margin: 0 auto;
   border-collapse: collapse;
-  width: 100%;
+  width: 25%;
 }
 
 th, td {
@@ -38,4 +38,14 @@ hr {
   border: none;
   border-top: 1px solid #ddd;
   margin: 20px 0;
+}
+
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
 }
