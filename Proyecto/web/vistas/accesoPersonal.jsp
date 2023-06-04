@@ -19,7 +19,7 @@
 
         <div style="display: flex; justify-content: space-between;">
             <s:form method="POST" action="/vistas/ajusteCuentas.jsp">
-                <s:submit name="boton" value="Ajuste Cuentas"/>      
+                <s:submit name="boton" value="Gestión Cuentas"/>      
             </s:form>
             <s:form method="POST" action="cerrarSesion">
                 <s:submit name="boton" value="Cerrar Sesion"/>      
