@@ -79,6 +79,13 @@
             <result name="input">/vistas/login.jsp</result>
         </action>
         
+        <action name="imprimirTransacciones" class="actions.actionTransacciones" method="imprimirTransacciones">
+            <result name="success">/vistas/mostrarTransacciones.jsp</result>
+            <result name="input">/vistas/login.jsp</result>
+        </action>
+        
+        
+        
     </package>
     
 

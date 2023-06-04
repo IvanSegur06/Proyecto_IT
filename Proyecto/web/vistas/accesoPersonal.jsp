@@ -52,6 +52,8 @@
                     <s:hidden name="numCuenta" value="%{#cuenta.numCuenta}"/>
                     <s:submit name="boton" value="Mostrar Transacciones"/>      
                 </s:form>
+                
+                
                 <hr>
             </table>
         </s:iterator>

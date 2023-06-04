@@ -155,7 +155,7 @@ public class Transacciones implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Transacciones[ iDTransaccion=" + iDTransaccion + " ]";
+        return "ID_Transaccion" + iDTransaccion + " \n Nº Cuenta Dest: " + numcuentadestino + " \n Cantidad: " + cantidad + "€ \n Fecha: "  + fecha + "\n Descripcion: " + descripcion + "\n\n";
     }
     
 }

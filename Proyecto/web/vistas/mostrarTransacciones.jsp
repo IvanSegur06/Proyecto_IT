@@ -20,6 +20,10 @@
             <s:submit value="Volver"/>
         </s:form>  
         
+         <s:form action="imprimirTransacciones">
+            <s:submit value="Guardar Transacciones en PDF"/>
+        </s:form> 
+        
 
         <s:iterator value="#session.listaTransicciones" var="transacciones">
             <table>
