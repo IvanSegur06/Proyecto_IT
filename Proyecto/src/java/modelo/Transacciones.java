@@ -6,6 +6,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -155,7 +156,12 @@ public class Transacciones implements Serializable {
 
     @Override
     public String toString() {
-        return "ID_Transaccion" + iDTransaccion + " \n Nº Cuenta Dest: " + numcuentadestino + " \n Cantidad: " + cantidad + "€ \n Fecha: "  + fecha + "\n Descripcion: " + descripcion + "\n\n";
-    }
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    String formattedDate = dateFormat.format(fecha);
+    
+    return "ID_Transaccion: " + iDTransaccion + "\nNº Cuenta Dest: " + numcuentadestino +
+           "\nCantidad: " + cantidad + "€\nFecha: " + formattedDate +
+           "\nDescripcion: " + descripcion + "\n\n";
+}
     
 }
